@@ -6,7 +6,7 @@ import { BsPersonCircle } from 'react-icons/bs';
 const Header = () => {
     return (
         <div>
-            <div className="navbar bg-black fixed z-10 bg-opacity-50 px-20">
+            <div className="navbar bg-black bg-opacity-50 px-20">
                 <div className="flex-1">
                     <p className=" normal-case text-2xl text-white">𝓐𝓼𝓱𝓹𝓲𝓽𝓪𝓵</p>
                 </div>

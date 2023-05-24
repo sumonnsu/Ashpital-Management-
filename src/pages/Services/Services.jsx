@@ -45,27 +45,23 @@ const Services = () => {
                         <figure><img src={doctor1} alt="Shoes" className='h-52' /></figure>
                         <div className="card-body">
                             <h2 className="card-title">
-                                Dr. Shishir Oishy
+                                <h1>Dr. Shishir Oishy</h1>
                             </h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <div className="badge badge-outline">Fashion</div>
-                                <div className="badge badge-outline">Products</div>
-                            </div>
+                            <p className="text-slate-500">Gynecologist</p>
+                            <p>Dhaka Medical College</p>
+                            
                         </div>
                     </div>
                     {/* card-2 */}
                     <div className="card w-96 bg-base-100 shadow-xl">
                         <figure><img src={doctor2} alt="Shoes" className='h-52' /></figure>
                         <div className="card-body">
-                            <h2 className="card-title">
-                                Dr. Ashraful Islam
-                            </h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <div className="badge badge-outline">Fashion</div>
-                                <div className="badge badge-outline">Products</div>
+                            <div className="card-title">
+                                <p>Dr. Ashraful Islam</p>
                             </div>
+                            <p className="text-slate-500">Medicine Specialist</p>
+                            <p>Dhaka Medical College</p>
+                            
                         </div>
                     </div>
                     {/* card-3 */}
@@ -73,13 +69,11 @@ const Services = () => {
                         <figure><img src={doctor3} alt="Shoes" className='h-52' /></figure>
                         <div className="card-body">
                             <h2 className="card-title">
-                                Dr. Ash
+                                <p>Dr. Ash</p>
                             </h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <div className="badge badge-outline">Fashion</div>
-                                <div className="badge badge-outline">Products</div>
-                            </div>
+                            <p className="text-slate-500">Heart Specialist</p>
+                            <p>Chittagong Medical College</p>
+                            
                         </div>
                     </div>
                 </div>
