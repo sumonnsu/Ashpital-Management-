@@ -7,6 +7,9 @@ import Contact from "../pages/Contact/Contact";
 import Registration from "../pages/Registration/Registration";
 import Login from "../pages/Login/Login";
 import Home from "../pages/Home/Home";
+import PrivateRoute from "./PrivateRoute";
+import Appointment from "../pages/Appointment/Appointment";
+import Blood from "../pages/Blood/Blood";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +21,7 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path:'/doctors',
+                path: '/doctors',
                 element: <Doctors></Doctors>
             },
             {
@@ -38,11 +41,19 @@ const router = createBrowserRouter([
                 element: <Registration></Registration>
             },
             {
-                path:'/login',
+                path: '/login',
                 element: <Login></Login>
+            }, 
+            {
+                path: '/appointment',
+                element: <PrivateRoute><Appointment></Appointment></PrivateRoute>
+            },
+            {
+                path: '/blood',
+                element: <PrivateRoute><Blood></Blood></PrivateRoute>
             }
         ]
     },
-    
+
 ])
 export default router;

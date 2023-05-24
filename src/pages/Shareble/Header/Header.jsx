@@ -1,9 +1,20 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { BsPersonCircle } from 'react-icons/bs';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const logout = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
         <div>
             <div className="navbar bg-black bg-opacity-50 px-20">
@@ -17,8 +28,20 @@ const Header = () => {
                         <li><Link to="/shop">Shop</Link></li>
                         <li><Link to="/blog">Blog</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
-                        <li><Link to="/registration">Registration</Link></li>
-                        <li className='text-2xl'><Link to="/login"><BsPersonCircle/></Link></li>
+                        {
+                            user ? <div className='flex gap-5 justify-center items-center'>
+                                <Link to="/appointment">Appointment</Link>
+                                <Link to="/blood">Blood Req</Link>
+                                <img className='w-12 h-12 rounded-full' src={user.photoURL} alt="" />
+                                <button onClick={logOut}>Logout</button>
+                                <Link to="/feedback">Feedback</Link>
+                                <Link to="/feedback">All appointment</Link>
+                            </div> :
+                                <div className='flex gap-5'>
+                                    <li><Link to="/registration">Registration</Link></li>
+                                    <li className='text-2xl'><Link to="/login"><BsPersonCircle /></Link></li>
+                                </div>
+                        }
                     </ul>
                 </div>
             </div>

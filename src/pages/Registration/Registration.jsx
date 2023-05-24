@@ -5,6 +5,7 @@ import UseTitle from '../../hook/UseTitle';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { BsCheckLg } from 'react-icons/bs';
+import { updateProfile } from 'firebase/auth';
 
 const Registration = () => {
     UseTitle("Registration");
