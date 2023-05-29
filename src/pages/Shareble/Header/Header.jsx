@@ -35,7 +35,7 @@ const Header = () => {
                                 <img className='w-12 h-12 rounded-full' src={user.photoURL} alt="" />
                                 <button onClick={logOut}>Logout</button>
                                 <Link to="/feedback">Feedback</Link>
-                                <Link to="/feedback">All appointment</Link>
+                                <Link to="/appointments">All appointment</Link>
                             </div> :
                                 <div className='flex gap-5'>
                                     <li><Link to="/registration">Registration</Link></li>

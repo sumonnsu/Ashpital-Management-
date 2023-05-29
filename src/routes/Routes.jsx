@@ -10,6 +10,8 @@ import Home from "../pages/Home/Home";
 import PrivateRoute from "./PrivateRoute";
 import Appointment from "../pages/Appointment/Appointment";
 import Blood from "../pages/Blood/Blood";
+import Feedback from "../pages/Feedback/Feedback";
+import AllAppointment from "../pages/AllAppointment/AllAppointment";
 
 const router = createBrowserRouter([
     {
@@ -51,7 +53,15 @@ const router = createBrowserRouter([
             {
                 path: '/blood',
                 element: <PrivateRoute><Blood></Blood></PrivateRoute>
-            }
+            },
+            {
+                path: '/feedback',
+                element: <PrivateRoute><Feedback></Feedback></PrivateRoute>
+            },
+            {
+                path: '/appointments',
+                element: <PrivateRoute><AllAppointment></AllAppointment></PrivateRoute>
+            },
         ]
     },
 
