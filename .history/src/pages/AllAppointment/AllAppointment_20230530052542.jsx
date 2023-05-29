@@ -27,7 +27,7 @@ const AllAppointment = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.deletedCount > 0) {
+                if (data.deletedCount) {
                     alert("Appointment delete successfully");
                     const remainingAppoint = appointments.filter(appoint => appoint._id != _id);
                     setAppointments(remainingAppoint);

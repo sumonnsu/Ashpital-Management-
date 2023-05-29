@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import UseTitle from '../../hook/UseTitle';
 import { AuthContext } from '../../providers/AuthProvider';
+import AllAppointmentDetails from '../AllAppointmentDetails/AllAppointmentDetails';
 import app from '../../firebase/firebase.config';
 
 const AllAppointment = () => {
@@ -26,11 +27,11 @@ const AllAppointment = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                if (data.deletedCount > 0) {
+                if (data.isConfirmed) {
                     alert("Appointment delete successfully");
+
                     const remainingAppoint = appointments.filter(appoint => appoint._id != _id);
-                    setAppointments(remainingAppoint);
+                    setRemainAppoint(remainingAppoint);
                 }
             })
     }
@@ -38,6 +39,9 @@ const AllAppointment = () => {
         <div>
             <h1 className='text-center mt-5 mb-5 text-2xl'>Appointments</h1>
             <div className='grid grid-cols-2 w-3/4 mx-auto mt-10 mb-10 gap-5'>
+                {/* {
+                    appointments.map(appointment => <AllAppointmentDetails key={appointment._id} appointment={appointment} appointments={appointments}></AllAppointmentDetails>)
+                } */}
                 {
                     appointments.map(appointment => <div key={appointment._id} className='border pl-10 shadow-xl py-10 '>
                         <p>Age: {appointment.age}</p>

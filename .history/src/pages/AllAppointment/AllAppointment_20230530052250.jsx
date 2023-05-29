@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import UseTitle from '../../hook/UseTitle';
 import { AuthContext } from '../../providers/AuthProvider';
+import AllAppointmentDetails from '../AllAppointmentDetails/AllAppointmentDetails';
 import app from '../../firebase/firebase.config';
 
 const AllAppointment = () => {
@@ -26,9 +27,9 @@ const AllAppointment = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                if (data.deletedCount > 0) {
+                if (data.isConfirmed) {
                     alert("Appointment delete successfully");
+
                     const remainingAppoint = appointments.filter(appoint => appoint._id != _id);
                     setAppointments(remainingAppoint);
                 }

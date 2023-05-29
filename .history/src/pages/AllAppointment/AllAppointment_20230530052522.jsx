@@ -27,11 +27,11 @@ const AllAppointment = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.deletedCount > 0) {
-                    alert("Appointment delete successfully");
-                    const remainingAppoint = appointments.filter(appoint => appoint._id != _id);
-                    setAppointments(remainingAppoint);
-                }
+                // if (data.isConfirmed) {
+                //     alert("Appointment delete successfully");
+                //     const remainingAppoint = appointments.filter(appoint => appoint._id != _id);
+                //     setAppointments(remainingAppoint);
+                // }
             })
     }
     return (
